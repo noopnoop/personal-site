@@ -1,5 +1,4 @@
 import Meta from './meta'
-import Image from 'next/image'
 import styles from './styles.module.css'
 
 type Props = {
@@ -9,15 +8,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div>
-      <div className={styles["bgWrap"]}>
-        <Image
-          src="/assets/bg.png"
-          layout="fixed"
-          width="3840"
-          height="2160"          
-        />
-      </div>
+    <div className={styles["bgWrap"]}>
       <Meta />
       <div className="min-h-screen">
         <main>{children}</main>

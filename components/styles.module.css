@@ -4,5 +4,9 @@
   width: 100vw;
   overflow: hidden;
   z-index: -10;
-  background-color: black;
+  background-color: rgb(14, 4, 31);
+}
+
+.base {
+  background-color:gainsboro;
 }
