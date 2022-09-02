@@ -12,8 +12,15 @@ export default function Listing({ allPosts }: Props) {
   return (
     <Layout>
       <div className="max-w-2xl mx-auto mt-10 rounded-lg bg-stone-50 p-5 space-y-4">
-        <div className="text-center text-4xl font-bold">
-          here are my blog articles🥴
+      <div className="text-4xl">
+          <Link href="/">
+            <div className="float-left hover:cursor-pointer hover:font-extrabold">
+              ←
+            </div>
+          </Link>
+          <div className="text-right font-bold">
+            here are my blog articles X3
+          </div>
         </div>
         {allPosts.map((post : Post) => {
           return (
