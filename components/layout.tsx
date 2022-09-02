@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Meta from './meta'
 import styles from './styles.module.css'
 
@@ -8,12 +9,18 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className={styles["bgWrap"]}>
-      <Meta />
-      <div className="min-h-screen">
-        <main>{children}</main>
+    <>
+      <Head>
+        <title>The Inter Net</title>
+      </Head>
+      <div className={styles["bgWrap"]}>
+        
+        <Meta />
+        <div className="min-h-screen">
+          <main>{children}</main>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -2,15 +2,12 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import PostBody from '../../components/post-body'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
-import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import type PostType from '../../interfaces/post'
+import Link from 'next/link'
 
 type Props = {
   post: PostType
@@ -26,24 +23,17 @@ export default function Post({ post, morePosts, preview }: Props) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
-              <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
+            <article className="max-w-2xl mx-auto mt-10 mb-10 rounded-lg bg-stone-50 p-5 space-y-4">
+              <Link href="/posts">
+                <div className="text-4xl hover:cursor-pointer hover:font-extrabold">
+                  ←
+                </div>
+              </Link>
+              <PostTitle>{post.title}</PostTitle>
               <PostBody content={post.content} />
             </article>
           </>

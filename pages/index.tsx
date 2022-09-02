@@ -6,9 +6,6 @@ export default function Index() {
   return (
     <>
       <Layout>
-        <Head>
-          <title>The Inter Net</title>
-        </Head>
         <TOC/>
       </Layout>
     </>

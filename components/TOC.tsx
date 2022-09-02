@@ -22,7 +22,7 @@ const TOC = () => {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt distinctio, provident necessitatibus repellat perferendis dolorum est enim officia ullam repudiandae ea delectus commodi in eos eius impedit eligendi fugit aspernatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolorem, molestiae et neque nihil obcaecati vero cupiditate illo esse sunt nam rerum ipsa ad atque reiciendis quibusdam nisi tempore.
           </p>
         </div>
-        <Link href="/blog">
+        <Link href="/posts">
           <div className="text-2xl border-2 shadow rounded-lg p-1 pl-5 font-medium hover:font-extrabold hover:bg-stone-100 hover:cursor-pointer">
             Blog
           </div>
