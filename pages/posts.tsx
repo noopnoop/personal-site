@@ -12,7 +12,7 @@ export default function Listing({ allPosts }: Props) {
   return (
     <Layout>
       <div className="max-w-2xl mx-auto mt-10 rounded-lg bg-stone-50 p-5 space-y-4">
-      <div className="text-4xl">
+        <div className="text-4xl">
           <Link href="/">
             <div className="float-left hover:cursor-pointer hover:font-extrabold">
               ←
@@ -22,9 +22,9 @@ export default function Listing({ allPosts }: Props) {
             here are my blog articles X3
           </div>
         </div>
-        {allPosts.map((post : Post) => {
+        {allPosts.map((post : Post, i : number) => {
           return (
-            <Link href={"/posts/" + post.slug}>
+            <Link key={i.toString()} href={"/posts/" + post.slug}>
               <div className="group flex-column border-2 shadow rounded-lg p-1 pl-5 font-medium hover:bg-stone-100 hover:cursor-pointer">
                 <div className="text-xl group-hover:font-extrabold">
                   {post.title}
