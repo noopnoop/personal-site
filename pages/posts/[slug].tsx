@@ -15,19 +15,38 @@ type Props = {
   preview?: boolean
 }
 
+// export default function Post({ post, morePosts, preview }: Props) {
+//   const router = useRouter()
+//   if (!router.isFallback && !post?.slug) {
+//     return <ErrorPage statusCode={404} />
+//   }
+//   return (
+//     <Layout preview={preview}>
+//       <Container>
+//         {router.isFallback ? (
+//           <PostTitle>Loading…</PostTitle>
+//         ) : (
+//           <>
+//             <article className="max-w-2xl mx-auto mt-10 mb-10 rounded-lg bg-stone-50 p-5 space-y-4">
+//               <Link href="/posts">
+//                 <div className="text-4xl hover:cursor-pointer hover:font-extrabold">
+//                   ←
+//                 </div>
+//               </Link>
+//               <PostTitle>{post.title}</PostTitle>
+//               <PostBody content={post.content} />
+//             </article>
+//           </>
+//         )}
+//       </Container>
+//     </Layout>
+//   )
+// }
+
 export default function Post({ post, morePosts, preview }: Props) {
-  const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
-    return <ErrorPage statusCode={404} />
-  }
   return (
-    <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="max-w-2xl mx-auto mt-10 mb-10 rounded-lg bg-stone-50 p-5 space-y-4">
+    <Layout>
+            <article className="max-w-2xl mx-auto my-10 rounded-lg bg-stone-50 p-5 space-y-4">
               <Link href="/posts">
                 <div className="text-4xl hover:cursor-pointer hover:font-extrabold">
                   ←
@@ -36,9 +55,6 @@ export default function Post({ post, morePosts, preview }: Props) {
               <PostTitle>{post.title}</PostTitle>
               <PostBody content={post.content} />
             </article>
-          </>
-        )}
-      </Container>
     </Layout>
   )
 }

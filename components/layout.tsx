@@ -16,9 +16,8 @@ const Layout = ({ children }: Props) => {
       <div className={styles["bgWrap"]}>
         
         <Meta />
-        <div className="min-h-screen">
+        
           <main>{children}</main>
-        </div>
       </div>
     </>
   )

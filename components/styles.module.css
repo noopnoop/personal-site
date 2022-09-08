@@ -1,9 +1,10 @@
 .bgWrap {
-  width: 100vw;
-  height: 100vw max-content;
-  overflow: hidden;
-  z-index: -10;
-  background-color: rgb(70, 48, 109);
+  --bg-main-color: rgb(70, 48, 109);
+  --bg-accent-color: rgb(62, 41, 100);
+  overflow-x: visible;
+  overflow-y: hidden;
+  min-height: 100vh;
+  background: repeating-linear-gradient( 225deg, var(--bg-accent-color), var(--bg-accent-color) 50px, var(--bg-main-color) 50px 100px);
 }
 
 .base {

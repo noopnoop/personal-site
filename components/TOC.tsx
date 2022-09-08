@@ -6,8 +6,7 @@ const TOC = () => {
   return (
     <div className="max-w-2xl mx-auto mt-10 rounded-lg bg-stone-50 p-5 space-y-4">
         <div className="text-center text-4xl font-bold">
-          
-          yokoso to my web page  	(o´▽`o)
+          hi  	(o´▽`o)
         </div>
         <div>
           <div className="float-left px-3 pt-3">
