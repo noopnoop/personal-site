@@ -1,25 +1,28 @@
-import Head from 'next/head'
-import Meta from './meta'
-import styles from './styles.module.css'
+import { motion } from 'framer-motion'
 
 type Props = {
   preview?: boolean
   children: React.ReactNode
 }
 
+const variants = {
+  hidden: { opacity: 0, x: 0, y: -50 },
+  enter: { opacity: 1, x: 0, y: 0 },
+  exit: { opacity: 0, x: 0, y: -100 },
+}
+
+
 const Layout = ({ children }: Props) => {
   return (
-    <>
-      <Head>
-        <title>The Inter Net</title>
-      </Head>
-      <div className={styles["bgWrap"]}>
-        
-        <Meta />
-        
-          <main>{children}</main>
-      </div>
-    </>
+    <motion.main
+    initial="hidden"
+    animate="enter"
+    exit="exit"
+    variants={variants}
+    transition={{ type: 'tween', duration:0.4 }}
+    >
+        {children}
+    </motion.main>
   )
 }
 
